@@ -1,0 +1,23 @@
+control + {p, z}
+	rofi -show {run, ssh}
+
+control + {Return, e, n}
+	$TERM -e {$SHELL, $PICKER, $FEEDER}
+
+control + b
+	$BROWSER
+
+mod4 + shift + {f, m, t}
+	bspc node -state {floating, fullscreen, tiled}
+
+mod4 + {m, t}
+	bspc desktop --layout {monocle, tiled}
+
+mod4 + shift + r
+	bspc wm --restart
+
+mod4 + shift + q
+	bspc quit 0
+
+control + shift + r
+	pkill sxhkd && sxhkd &

@@ -1,0 +1,35 @@
+backend: webengine
+
+content:
+  headers:
+    accept_language: en-US,en;q=0.5
+    custom: '{"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}'
+
+downloads:
+  location:
+    suggestion: filename
+
+fonts:
+  default_size: 16
+
+input:
+  insert_mode:
+    auto_load: true
+    auto_enter: true
+    auto_leave: true
+
+session:
+  lazy_restore: true
+
+spellcheck:
+  languages:
+    - en-US
+
+tabs:
+  new_position: next
+  position: left
+  select_on_remove: last-used
+  show_switching_delay: 1000
+  title:
+    format: {audio} {index}: {title}
+    format_pinned: {index}: {host}

@@ -1,0 +1,69 @@
+control + shift + r
+	pkill -USR1 -x sxhkd; \
+	notify-send "sxhkd restarted"
+
+{_, ctrl +} Print
+	name="$(date +%s).png"; \
+	file="~/var/screenshots/$name"; \
+	maim {_,-s} $file; \
+	xclip -selection clipboard -t image/png; < $file; \
+	notify-send "Screenshot Taken" "Screenshot $name saved to clipboard"
+
+#XF86MonBrightness{Down,Up}
+control + {bracketleft, bracketright}
+	brightnessctl s 5%{-,+}
+
+hyper + space
+	j4-dmenu-desktop
+
+control + p
+	rofi -show run
+
+control + Tab
+	rofi -show window
+
+control + Return
+	$TERM
+
+control + b
+	$BROWSER
+
+control + {e, f}
+	$TERM -e {$PICKER, $FEEDER}
+
+# dwm
+hyper + {k,j}
+	dwmc focusstack {-,+}1
+
+hyper + shift + {k,j}
+	dwmc movestack {-,+}1
+
+hyper + {h,l}
+	dwmc setmfact {-,+}0.05
+
+hyper + b
+	dwmc togglebar
+
+hyper + shift + p
+	dwmc togglefloating
+
+hyper + w
+	dwmc killclient
+
+hyper + shift + {q,r}
+	dwmc quit {0,1}
+
+hyper + Tab
+	dwmc view
+
+hyper + {t,f,m}
+	dwmc setlayoutex {0,1,2}
+
+hyper + {_,ctrl +}{_,shift +} {1-9}
+	dwmc {_,toggle}{viewex,tagex} {0-8}
+
+hyper + 0
+	dwmc viewall
+
+hyper + {minus,plus}
+	dwmc setgaps {-,+}1
