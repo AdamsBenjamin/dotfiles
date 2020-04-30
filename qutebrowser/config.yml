@@ -1,16 +1,17 @@
 backend: webengine
 
 content:
+  canvas_reading: false
   headers:
-    accept_language: en-US,en;q=0.5
-    custom: '{"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}'
+    accept_language: qen-US,en;q=0.5
+    #    user_agent: 'Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0'
 
 downloads:
   location:
     suggestion: filename
 
 fonts:
-  default_size: 16
+  default_size: '14px'
 
 input:
   insert_mode:
@@ -26,10 +27,8 @@ spellcheck:
     - en-US
 
 tabs:
-  new_position: next
   position: left
   select_on_remove: last-used
-  show_switching_delay: 1000
   title:
-    format: {audio} {index}: {title}
-    format_pinned: {index}: {host}
+    format: '{index}: {current_title}'
+    format_pinned: '{index}: {host}'
